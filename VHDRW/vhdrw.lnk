@@ -1,0 +1,4 @@
+system nt
+#debug watcom all
+file obj\vhdrw
+name bin\vhdrw

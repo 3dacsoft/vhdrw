@@ -1,0 +1,5 @@
+system nt
+#debug watcom all
+file vhdinfo
+name vhdinfo
+

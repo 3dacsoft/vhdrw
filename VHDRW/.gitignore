@@ -1,0 +1,9 @@
+.vscode/
+*.obj
+*.map
+*.exe
+*.com
+*.err
+*.ima
+*.bin
+*.vhd

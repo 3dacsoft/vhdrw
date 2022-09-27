@@ -1,0 +1,37 @@
+ROOTDIR = c:\vm
+
+CC   = wcc386
+LNK  = wlink
+
+COPT = -d3
+CRWOPT = -fo=obj\vhdrwdbg.obj
+DEBUGPRM = -d3 -d_VHDDEBUG
+
+vhdinfo:    vhdinfo.exe
+vhdrw:		bin\vhdrw.exe
+vhdrwdbg:   bin\vhdrwdbg.exe
+
+vhdinfo.exe:     vhdinfo.obj
+	$(LNK) @vhdinfo.lnk
+
+vhdinfo.obj:      vhdinfo.c
+#.c.obj:
+	$(CC) $(COPT) vhdinfo.c
+
+
+#VHDRW RELEASE
+bin\vhdrw.exe:		obj\vhdrw.obj
+	$(LNK) @vhdrw.lnk
+
+obj\vhdrw.obj:		vhdrw.c
+	$(CC) $(CRWOPT) vhdrw.c
+
+
+
+#DEBUG BUILD	
+bin\vhdrwdbg.exe:		obj\vhdrwdbg.obj
+	$(LNK) @vhdrwdbg.lnk
+
+obj\vhdrwdbg.obj:		vhdrw.c
+	$(CC) $(CRWOPT) $(DEBUGPRM) vhdrw.c
+	
